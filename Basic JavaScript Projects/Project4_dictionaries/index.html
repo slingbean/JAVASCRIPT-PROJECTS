@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Japanese Philosophy Dictionary</title>
+
+        <!--links javaScript to page-->
+        <script src="JS/main.js"></script>
+
+        <!--CSS Styling-->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-family: Georgia, "Times New Roman", serif;
+                background-color: #eee7d8;
+                color: #2d2925;
+            }
+
+            .dictionary {
+                width: 100%;
+                max-width: 650px;
+                padding: 55px 60px;
+                background-color: #fffdf7;
+                border: 1px solid #d5ccb9;
+                box-shadow: 8px 8px 0 #d2c7b3;
+                background-image: repeating-linear-gradient(
+                    #fffdf7 0px,
+                    #fffdf7 31px,
+                    #e4ded2 32px
+                );
+            }
+
+            .top-line {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 45px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 13px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                margin: 0 0 10px;
+                font-size: 40px;
+                font-weight: normal;
+            }
+
+            .subtitle {
+                margin-bottom: 40px;
+                font-size: 17px;
+                font-style: italic;
+            }
+
+            .index-card {
+                position: relative;
+                padding: 45px 35px 75px;
+                text-align: center;
+                background-color: #faf6eb;
+                border: 2px solid #2d2925;
+                box-shadow: 5px 5px 0 #d2c7b3;
+            }
+
+            .card-number {
+                margin-bottom: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .index-card button {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                margin: 0;
+                padding: 8px 14px;
+                border: 1px solid #2d2925;
+                background-color: transparent;
+                color: #2d2925;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+            .index-card button:hover {
+                background-color: #2d2925;
+                color: #fffdf7;
+            }
+
+            #Dictionary {
+                margin: 0;
+                font-size: 27px;
+                line-height: 1.5;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <main class="dictionary">
+            <div class="top-line">
+                <span>JavaScript</span>
+            </div>
+
+            <h1>Japanese Philosophy</h1>
+
+            <div class="subtitle">
+                Philosophies and practices for living thoughtfully...
+            </div>
+            <!-- Index Cards -->
+
+            <section class="index-card">
+                <div class="card-number">
+                    01
+                </div>
+
+                <p id="Dictionary">
+                    Wabi-Sabi
+                </p>
+
+                <button onclick="dictionary()">
+                definition
+            </button>
+            </section>
+
+
+        </main>
+    </body>
+</html>
