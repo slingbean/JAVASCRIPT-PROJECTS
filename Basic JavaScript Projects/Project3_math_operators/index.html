@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Math Operators</title>
+<!-- Links the JavaScript -->
+        <script src="JS/main.js"></script>
+
+<!-- CSS Styling for webpage -->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-family: Georgia, "Times New Roman", serif;
+                background-color: #eee7d8;
+                color: #2d2925;
+            }
+
+            .worksheet {
+                width: 100%;
+                max-width: 650px;
+                padding: 55px 60px;
+                background-color: #fffdf7;
+                border: 1px solid #d5ccb9;
+                box-shadow: 8px 8px 0 #d2c7b3;
+                background-image: repeating-linear-gradient(
+                    #fffdf7 0px,
+                    #fffdf7 31px,
+                    #e4ded2 32px
+                );
+            }
+
+            .top-line {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 45px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 13px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                margin: 0 0 10px;
+                font-size: 42px;
+                font-weight: normal;
+            }
+
+            .subtitle {
+                margin-bottom: 45px;
+                font-size: 17px;
+                font-style: italic;
+            }
+
+            .problem {
+                margin: 35px 0;
+                padding: 30px;
+                text-align: center;
+                background-color: #faf6eb;
+                border: 2px solid #2d2925;
+            }
+
+            .problem-number {
+                margin-bottom: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            #math,
+            #subtraction,
+            #multiplication,
+            #division,
+            #moreMath,
+            #modulus,
+            #negation,
+            #increment,
+            #decrement,
+            #random,
+            #mathObject {
+                margin: 0;
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            #math:hover,
+            #subtraction:hover,
+            #multiplication:hover,
+            #division:hover,
+            #moreMath:hover,
+            #modulus:hover,
+            #negation:hover,
+            #increment:hover,
+            #decrement:hover,
+            #random:hover,
+            #mathObject:hover {
+                text-decoration: underline;
+            }
+
+            .instruction {
+                margin-top: 35px;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+            }
+
+            button {
+                display: block;
+                margin: 25px auto 0;
+                padding: 12px 24px;
+                border: 2px solid #2d2925;
+                background-color: #2d2925;
+                color: #fffdf7;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #fffdf7;
+                color: #2d2925;
+            }
+
+            .check {
+                color: #b3261e;
+                font-size: 32px;
+                margin-left: 8px;
+            }
+
+        </style>
+    </head>
+<!--Math Problems -->
+    <body>
+
+        <main class="worksheet">
+
+            <div class="top-line">
+                <span>JavaScript</span>
+                <span>Math Operators</span>
+            </div>
+
+            <h1>Math Practice</h1>
+
+            <div class="subtitle">
+                A little arithmetic, a little JavaScript.
+            </div>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 01
+                </div>
+
+                <p id="math" onclick="addition()">
+                    10 + 5 = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 02
+                </div>
+
+                <p id="subtraction" onclick="subtraction()">
+                    10 - 5 = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 03
+                </div>
+
+                <p id="multiplication" onclick="multiplication()">
+                    10 x 5 = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 04
+                </div>
+
+                <p id="division" onclick="division()">
+                    10 &#247; 5 = ?
+                </p>
+
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 05
+                </div>
+
+                <p id="moreMath" onclick="more_Math()">
+                    (10 + 5) x 2 - 10 &#247; 5 = ?
+                </p>
+
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 06
+                </div>
+
+                <p id="modulus" onclick="modulus()">
+                    10 &#247; 3 = 3 R ?
+                </p>
+
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 07
+                </div>
+
+                <p id="negation" onclick="negation()">
+                    The negation of 10 = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 08
+                </div>
+
+                <p id="increment" onclick="increment()">
+                    10 + 1 = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 09
+                </div>
+
+                <p id="decrement" onclick="decrement()">
+                    10 - 1 = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 10
+                </div>
+
+                <p id="random" onclick="randomNumber()">
+                    A Random Number = ?
+                </p>
+            </section>
+
+            <section class="problem">
+
+                <div class="problem-number">
+                    Problem 11
+                </div>
+
+                <p id="mathObject" onclick="mathObject()">
+                    Round 7.6 = ?
+                </p>
+            </section>
+
+            <div class="instruction">
+                Solve the problems using JavaScript.
+            </div>
+
+            <button onclick="checkAnswer()">
+                Check Answers
+            </button>
+
+        </main>
+    </body>
+</html>
