@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A Daily Note</title>
+
+        <!--CSS Styling-->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-family: Georgia, "Times New Roman", serif;
+                background-color: #eee8dc;
+                color: #252522;
+                transition: background-color 0.5s ease, color 0.5s ease;
+            }
+
+            .daily-note {
+                width: 100%;
+                max-width: 650px;
+                padding: 50px;
+                background-color: #fffdf7;
+                border: 1px solid #d2c9b8;
+                transition: background-color 0.5s ease, border-color 0.5s ease;
+            }
+
+            /*Small Labels*/
+
+            .label {
+                margin-bottom: 12px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            /* Heading */
+
+            h1 {
+                margin: 0 0 8px;
+                font-size: 42px;
+                font-weight: normal;
+            }
+
+            .subtitle {
+                margin: 0 0 40px;
+                font-size: 16px;
+                font-style: italic;
+            }
+
+            /* Time Display */
+
+            .time-section {
+                padding: 35px 0;
+                text-align: center;
+                border-top: 1px solid #cfc6b5;
+                border-bottom: 1px solid #cfc6b5;
+            }
+
+            /* Sun and Moon */
+
+            .celestial {
+                position: relative;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 25px;
+            }
+
+            .sun {
+                width: 50px;
+                height: 50px;
+                margin: 10px auto;
+                border: 2px solid currentColor;
+                border-radius: 50%;
+            }
+
+            .moon {
+                width: 50px;
+                height: 50px;
+                margin: 10px auto;
+                border: 2px solid currentColor;
+                border-radius: 50%;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .moon::after {
+                content: "";
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                top: -8px;
+                left: 14px;
+                background-color: #fffdf7;
+                border-radius: 50%;
+                transition: background-color 0.5s ease;
+            }
+
+            /* Current Time */
+
+            .current-time {
+                margin: 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            /* Daily Message */
+
+            .message {
+                margin: 30px auto 0;
+                max-width: 420px;
+                font-size: 28px;
+                line-height: 1.35;
+            }
+
+            /* Date */
+
+            .date-section {
+                padding-top: 25px;
+                text-align: center;
+            }
+
+            .current-date {
+                margin: 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+
+            /* Morning Theme */
+            
+            body.morning {
+                background-color: #eee8dc;
+                color: #252522;
+            }
+
+            /* Afternoon Theme */
+
+            body.afternoon {
+                background-color: #e4ded1;
+                color: #252522;
+            }
+
+            /* Evening Theme */
+
+            body.evening {
+                background-color: #6d7274;
+                color: #f8f3e8;
+            }
+
+            body.evening .daily-note {
+                background-color: #34383a;
+                border-color: #8b8f8f;
+            }
+
+            /* Night Theme */
+
+            body.night {
+                background-color: #171b22;
+                color: #eee9dc;
+            }
+
+            body.night .daily-note {
+                background-color: #222731;
+                border-color: #4d535d;
+            }
+
+            body.night .moon::after {
+                background-color: #222731;
+            }
+
+            /* Mobile Styling */
+
+            @media (max-width: 600px) {
+                .daily-note {
+                    padding: 35px 25px;
+                }
+
+                h1 {
+                    font-size: 34px;
+                }
+
+                .message {
+                    font-size: 24px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <main class="daily-note">
+
+            <!--Page Label-->
+            <div class="label">
+                A Daily Note | 007
+            </div>
+
+            <h1 id="noteTitle"></h1>
+
+            <p class="subtitle">
+                A small reminder...
+            </p>
+
+            <!-- Time and Daily Message -->
+
+            <section class="time-section">
+
+                <div class="celestial" id="celestial">
+                    <div class="sun"></div>
+                </div>
+
+                <p class="current-time" id="currentTime"></p>
+
+                <p class="message" id="dailyMessage"></p>
+
+            </section>
+
+            <!-- Todays Date -->
+
+            <section class="date-section">
+
+                <p class="current-date" id="currentDate"></p>
+
+            </section>
+        </main>
+
+        <!-- Links JavaScript to the page -->
+         <script src="JS/main.js"></script>
+    </body>
+</html>
