@@ -10,6 +10,9 @@ function showDailyNote() {
     //Local variable: gets the current hour from the Date object
     var currentHour = new Date().getHours();
 
+    //Debugging practice: logs the current hour to the console
+    console.log("Current hour:", currentHour);
+
     //Gets the current minutes from the Date object
     var currentMinute = new Date().getMinutes();
 
@@ -110,5 +113,17 @@ function showDailyNote() {
     document.getElementById("currentDate").innerHTML = formattedDate;
 }
 
+//This function is used to practice finding an error with Chrome DevTools
+function debuggingPractice() {
+    //Stores a short message for the debugging practice
+    var debuggingMessage = "Debugging helps find problems in code.";
+
+    //Logs the message to the browser console 
+    console.log(debuggingMessage);
+}
+
 //Runs the function when the webpage loads
 showDailyNote();
+
+//Runs the debugging practice function
+debuggingPractice();
