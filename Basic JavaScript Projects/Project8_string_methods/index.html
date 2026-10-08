@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Omikuji Fortune</title>
+
+        <!--CSS Styling-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400&display=swap" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                padding: 40px 20px;
+                font-family: Georgia, "Times New Roman", serif;
+                background-color: #e8e0d2;
+                color: #292824;
+            }
+
+            /*Fortune Slip*/
+
+            .fortune-slip {
+                position: relative;
+                width: 100%;
+                max-width: 560px;
+                min-height: 760px;
+                padding: 50px;
+                background-color: #fffdf6;
+                border: 1px solid #cfc5b4;
+                box-shadow: 10px 10px 0 #d1c6b4;
+            }
+
+            /*Top of Slip*/
+
+            .top-section {
+                text-align: center;
+            }
+
+            .omikuji {
+                margin: 0;
+                font-family: "Noto Serif JP", serif;
+                font-size: 30px;
+                font-weight: normal;
+                letter-spacing: 5px;
+            }
+
+            .top-line {
+                width: 80px;
+                height: 1px;
+                margin: 20px auto 0;
+                background-color: #bcb2a2;
+            }
+
+            /*CSS Fortune Stamp*/
+
+            .stamp {
+                position: relative;
+                width: 68px;
+                height: 68px;
+                margin: 28px auto 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #a13d32;
+                border-radius: 8px;
+                color: #a13d32;
+                transform: rotate(-5deg);
+            }
+
+            .stamp::before {
+                content: "";
+                position: absolute;
+                width: 56px;
+                height: 56px;
+                border: 1px solid #a13d32;
+                border-radius: 5px;
+            }
+
+            .stamp-text {
+                position: relative;
+                font-size: 18px;
+                font-family: "Noto Serif JP", serif;
+                line-height: 1.1;
+                text-align: center;
+            }
+
+            /*Fortune Result*/
+
+            .fortune-section {
+                text-align: center;
+            }
+
+            .label {
+                margin: 0 0 15px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .fortune-type {
+                margin: 0;
+                color: #a13d32;
+                font-family: "Noto Serif JP", serif;
+                font-size: 48px;
+                font-weight: normal;
+                line-height: 1.1;
+            }
+
+            .fortune-translation {
+                margin: 8px 0 45px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            /*Lucky Number*/
+
+            .lucky-number {
+                margin: 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 42px;
+                letter-spacing: 3px;
+            }
+
+            .lucky-digits-label {
+                margin: 10px 0 5px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 10px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .lucky-digits {
+                margin: 0;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 18px;
+            }
+
+            /*Fortune Message*/
+
+            .fortune-divider {
+                width: 100%;
+                height: 1px;
+                margin: 45px 0 30px;
+                background-color: #cfc5b4;
+            }
+
+            .fortune-message {
+                max-width: 380px;
+                margin: 0 auto;
+                font-size: 22px;
+                line-height: 1.5;
+            }
+
+            /*Bottom Controls*/
+
+            .bottom-section {
+                position: absolute;
+                right: 50px;
+                bottom: 40px;
+                text-align: right;
+            }
+
+            .fortune-number {
+                margin: 0 0 10px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            button {
+                padding: 0;
+                border: none;
+                background: none;
+                color: #292824;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 12px;
+                letter-spacing: 1px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                color: #a13d32;
+            }
+
+            /*Mobile Styling*/
+
+            @media (max-width: 600px) {
+                body {
+                    padding: 20px;
+                }
+                .fortune-slip {
+                    min-height: 700px;
+                    padding: 40px 30px;
+                }
+                .bottom-section {
+                    right: 30px;
+                    bottom: 30px;
+                }
+                .fortune-type {
+                    font-size: 42px;
+                }
+                .lucky-number {
+                    font-size: 34px;
+                }
+                .fortune-message {
+                    font-size: 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <main class="fortune-slip">
+            <!--Top of Fortune Slip-->
+            <section class="top-section">
+
+                <h1 class="omikuji">
+                    &#12362;&#12415;&#12367;&#12376;
+                </h1>
+
+                <div class="top-line"></div>
+
+                <!--CSS Only Fortune Stamp-->
+
+                <div class="stamp">
+                    <div class="stamp-text">
+                        &#21513;<br>&#36939;
+                    </div>
+                </div>
+            </section>
+
+            <!--Fortune Result-->
+
+            <section class="fortune-section">
+
+                <p class="label">
+                    Your Fortune
+                </p>
+
+                <h2 class="fortune-type" id="fortuneType">
+                    &mdash;
+                </h2>
+
+                <p class="fortune-translation" id="fortuneTranslation">
+                    Draw a fortune
+                </p>
+
+                <!--Lucky Number-->
+
+                <p class="lucky-number" id="luckyNumber">
+                    &mdash;
+                </p>
+
+                <p class="lucky-digits-label">
+                    Lucky Digits
+                </p>
+
+                <p class="lucky-digits" id="luckyDigits">
+                    &mdash;
+                </p>
+
+                <!--Fortune Message-->
+
+                <div class="fortune-divider"></div>
+
+                <p class="fortune-message" id="fortuneMessage">
+                    Draw a fortune to see what the numbers have to say...
+                </p>
+
+            </section>
+
+            <!--Bottom Controls-->
+
+            <section class="bottom-section">
+
+                <p class="fortune-number" id="fortuneNumber">
+                    NO. 000
+                </p>
+
+                <button id="drawButton">
+                    Draw Fortune&#8594;
+                </button>
+
+            </section>
+
+        </main>
+
+        <!--Links JavaScript to the page-->
+        <script src="JS/main.js"></script>
+       
+    </body>
+</html>
