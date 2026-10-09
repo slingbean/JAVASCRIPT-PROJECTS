@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sets the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the album responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the browser tab title -->
+    <title>Surf Log | A Living Photo Album</title>
+
+    <!-- Links the external stylesheet -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- Main photo album -->
+    <main class="album">
+
+        <!-- Album heading -->
+        <header class="album-header">
+            <div>
+                <p class="eyebrow">FIELD NOTES / COASTAL TRIPS</p>
+                <h1>SURF LOG<span>.</span></h1>
+                <p class="subtitle">A living album of saltwater, road miles, and good sets.</p>
+            </div>
+
+            <p class="album-stamp">EST. BY THE SEA<br>VAN LIFE EDITION</p>
+        </header>
+
+        <!-- Thin divider beneath the header -->
+        <div class="rule"></div>
+
+        <!-- Current trip information -->
+        <section class="trip-heading">
+            <p class="section-label">CURRENT MEMORY</p>
+            <p id="tripCounter">TRIP 01 / 03</p>
+        </section>
+
+        <!-- Slideshow -->
+        <section class="slideshow" aria-label="Surf trip photo album">
+
+            <!-- Slide one -->
+            <article class="slide active">
+                <div class="photo-frame">
+                    <img src="Images/us.jpg"
+                         alt="Ryland and Cara kissing in front of their van 'Tetsuki'">
+                </div>
+
+                <div class="photo-caption">
+                    <div>
+                        <p class="photo-location">01 — TOFINO, BC</p>
+                        <h2>Tetsuki and Us</h2>
+                        <p class="photo-description">
+                            First surf trip, nowhere else we'd rather be.
+                        </p>
+                    </div>
+
+                    <p class="photo-date">10:00 AM<br>TRIP NOTES</p>
+                </div>
+
+                <div class="trip-note">
+                    <span>CONDITIONS</span>
+                    <span>Overcast / Light wind</span>
+                    <span>MOOD: ELATED</span>
+                </div>
+            </article>
+
+            <!-- Slide two -->
+            <article class="slide">
+                <div class="photo-frame">
+                    <img src="Images/surfbabe.jpg"
+                         alt="Ryland heading out to catch some waves">
+                </div>
+
+                <div class="photo-caption">
+                    <div>
+                        <p class="photo-location">02 — COX BAY, BC</p>
+                        <h2>Ocean Man</h2>
+                        <p class="photo-description">
+                            Ryland heading out to catch some waves
+                        </p>
+                    </div>
+
+                    <p class="photo-date">02:00 PM<br>TRIP NOTES</p>
+                </div>
+
+                <div class="trip-note">
+                    <span>CONDITIONS</span>
+                    <span>Rolling swell / SW wind</span>
+                    <span>MOOD: ENERGETIC</span>
+                </div>
+            </article>
+
+            <!-- Slide three -->
+            <article class="slide">
+                <div class="photo-frame">
+                    <img src="Images/surfbabe2.jpg"
+                         alt="Cara heading out to catch some waves">
+                </div>
+
+                <div class="photo-caption">
+                    <div>
+                        <p class="photo-location">03 — COX BAY</p>
+                        <h2>Cara's first surf</h2>
+                        <p class="photo-description">
+                            Cara heading out to catch some waves, hopefully!
+                        </p>
+                    </div>
+
+                    <p class="photo-date">02:30 PM<br>TRIP NOTES</p>
+                </div>
+
+                <div class="trip-note">
+                    <span>CONDITIONS</span>
+                    <span>Gentle swell / Windy</span>
+                    <span>MOOD: EXCITED</span>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Countdown and slideshow controls -->
+        <section class="album-controls">
+
+            <p id="countdown" aria-live="polite">
+                NEXT MEMORY IN 05
+            </p>
+
+            <div class="navigation">
+                <button id="previousButton" type="button">
+                    ← PREVIOUS
+                </button>
+
+                <button id="nextButton" type="button">
+                    NEXT →
+                </button>
+            </div>
+        </section>
+
+        <!-- Film-strip thumbnails -->
+        <section class="film-strip" aria-label="Choose a surf trip">
+
+            <button class="thumbnail active" data-slide="0"
+                    type="button" aria-label="Show Ryland and Cara photo">
+                <img src="Images/us.jpg" alt="">
+                <span>01 | TOFINO</span>
+            </button>
+
+            <button class="thumbnail" data-slide="1"
+                    type="button" aria-label="Show Ryland photo">
+                <img src="Images/surfbabe.jpg" alt="">
+                <span>02 | COX BAY</span>
+            </button>
+
+            <button class="thumbnail" data-slide="2"
+                    type="button" aria-label="Show Cara photo">
+                <img src="Images/surfbabe2.jpg" alt="">
+                <span>03 | COX BAY</span>
+            </button>
+
+        </section>
+
+        <!-- Album footer -->
+        <footer class="album-footer">
+            <p>COLLECT MOMENTS, NOT WORRIES.</p>
+            <p>MADE BETWEEN THE SETS · BC, CANADA</p>
+        </footer>
+
+    </main>
+
+    <!-- Links the JavaScript file -->
+    <script src="JS/main.js"></script>
+
+</body>
+</html>
