@@ -1,0 +1,447 @@
+
+/* Colour palette */
+
+:root {
+    --ocean: #153e52;
+    --deep-ocean: #102d3d;
+    --blue: #397e91;
+    --sea-glass: #b8d4c8;
+    --foam: #f4f5ed;
+    --paper: #fbf8ef;
+    --sand: #e7decb;
+    --ink: #233b40;
+    --muted: #71817d;
+    --rust: #c77758;
+    --line: #d9d8ca;
+}
+
+/* General page styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #dce7df;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* Main game container */
+
+.game-shell {
+    width: 100%;
+    max-width: 760px;
+    padding: 36px;
+    overflow: hidden;
+    background-color: var(--paper);
+    border: 1px solid #c8d1c7;
+    box-shadow: 8px 8px 0 #bdcec4;
+}
+
+/* Game heading */
+
+.game-header {
+    padding-bottom: 24px;
+}
+
+.eyebrow,
+.section-label,
+.stat-label,
+.scene-caption,
+.detail-label,
+.choice-prompt,
+.condition-tag,
+.game-footer {
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    color: var(--blue);
+    font-size: 10px;
+}
+
+h1 {
+    margin: 0;
+    color: var(--ocean);
+    font-size: clamp(38px, 8vw, 64px);
+    font-weight: normal;
+    line-height: 0.98;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: var(--rust);
+}
+
+.intro {
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* CSS-only ocean illustration */
+
+.ocean-scene {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #e6e6d8 0%,
+        #b6d0c9 32%,
+        #5798a3 33%,
+        #245e77 100%
+    );
+}
+
+.sun {
+    position: absolute;
+    top: 22px;
+    right: 15%;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #d9a477;
+    opacity: 0.9;
+}
+
+/* Back layer of ocean waves */
+
+.wave {
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    height: 130px;
+    border-radius: 48% 52% 0 0;
+}
+
+.wave-back {
+    bottom: -42px;
+    background-color: #397e91;
+    transform: rotate(-4deg);
+}
+
+/* Front layer of ocean waves */
+
+.wave-front {
+    bottom: -70px;
+    background-color: #153e52;
+    transform: rotate(4deg);
+}
+
+.wave-front::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8%;
+    width: 40%;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--sea-glass);
+    opacity: 0.9;
+}
+
+/* Text over the ocean scene */
+
+.scene-caption {
+    position: absolute;
+    z-index: 3;
+    bottom: 14px;
+    left: 16px;
+    margin: 0;
+    color: var(--foam);
+    font-size: 9px;
+}
+
+/* Player statistics */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.stat {
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.stat + .stat {
+    border-left: 1px solid var(--line);
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.stat strong {
+    color: var(--ocean);
+    font-size: 21px;
+    font-weight: normal;
+}
+
+/* Message and gameplay panels */
+
+.message-panel {
+    padding: 25px;
+    background-color: #f2f0e6;
+    border: 1px solid var(--line);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.section-label {
+    margin: 0 0 10px;
+    color: var(--blue);
+    font-size: 10px;
+}
+
+.message-panel h2 {
+    margin: 0 0 12px;
+    color: var(--ocean);
+    font-size: clamp(25px, 5vw, 34px);
+    font-weight: normal;
+    font-style: italic;
+}
+
+.message-panel > p:not(.section-label):not(.feedback):not(.choice-prompt) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Buttons */
+
+button {
+    min-height: 44px;
+    padding: 12px 15px;
+    border: 1px solid var(--ocean);
+    background-color: transparent;
+    color: var(--ocean);
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover {
+    background-color: var(--ocean);
+    color: var(--paper);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--rust);
+    outline-offset: 3px;
+}
+
+.primary-button {
+    margin-top: 12px;
+    background-color: var(--ocean);
+    color: var(--paper);
+}
+
+.primary-button:hover {
+    background-color: var(--blue);
+}
+
+/* Current wave information */
+
+.wave-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.condition-tag {
+    padding: 7px 9px;
+    border: 1px solid var(--sea-glass);
+    color: var(--blue);
+    font-size: 9px;
+}
+
+.wave-description {
+    min-height: 44px;
+}
+
+/* Wave statistics */
+
+.wave-details,
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 22px 0;
+}
+
+.wave-details > div,
+.results-grid > div {
+    padding: 12px 8px;
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+}
+
+.detail-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.wave-details strong,
+.results-grid strong {
+    color: var(--ocean);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Player decision buttons */
+
+.choice-prompt {
+    margin: 24px 0 12px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.choice-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.choice-buttons button {
+    line-height: 1.5;
+}
+
+/* Feedback after each decision */
+
+.feedback {
+    min-height: 44px;
+    margin: 18px 0 8px;
+    padding: 12px;
+    background-color: var(--sea-glass);
+    color: var(--ocean);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Session recap */
+
+.recap-heading {
+    margin: 24px 0 10px;
+    color: var(--ocean);
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.recap-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.recap-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Footer */
+
+.game-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 8px;
+    line-height: 1.7;
+}
+
+/* Layout adjustments for smaller screens */
+
+@media (max-width: 520px) {
+    body {
+        padding: 14px 10px;
+    }
+
+    .game-shell {
+        padding: 22px 16px;
+        box-shadow: 4px 4px 0 #bdcec4;
+    }
+
+    .ocean-scene {
+        height: 175px;
+    }
+
+    .surfer {
+        top: 55px;
+        left: 37%;
+    }
+
+    .message-panel {
+        padding: 18px;
+    }
+
+    .choice-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .wave-details,
+    .results-grid {
+        gap: 6px;
+    }
+
+    .wave-details > div,
+    .results-grid > div {
+        padding: 10px 6px;
+    }
+
+    .detail-label {
+        font-size: 7px;
+    }
+
+    .wave-details strong,
+    .results-grid strong {
+        font-size: 14px;
+    }
+
+    .game-footer {
+        flex-direction: column;
+    }
+}
+
+/* Respects reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the game fit different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the browser tab title -->
+    <title>Catch the Perfect Wave | Surf Arcade</title>
+
+    <!-- Links the external stylesheet -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- Main game container -->
+    <main class="game-shell">
+
+        <!-- Game title and introduction -->
+        <header class="game-header">
+            <p class="eyebrow">PACIFIC COAST / SURF ARCADE</p>
+            <h1>CATCH THE<br><span>PERFECT WAVE.</span></h1>
+            <p class="intro">
+                Five waves. Three lives. Make every decision count.
+            </p>
+        </header>
+
+        <!-- Ocean scene created entirely with CSS -->
+        <section class="ocean-scene" aria-label="Illustrated ocean">
+
+            <div class="sun"></div>
+            <div class="wave wave-back"></div>
+            <div class="wave wave-front"></div>
+
+
+            <p class="scene-caption">THE PACIFIC IS CALLING</p>
+        </section>
+
+        <!-- Player statistics -->
+        <section class="stats" aria-label="Session statistics">
+            <div class="stat">
+                <span class="stat-label">SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat">
+                <span class="stat-label">LIVES</span>
+                <strong id="lives">♥ ♥ ♥</strong>
+            </div>
+
+            <div class="stat">
+                <span class="stat-label">WAVE</span>
+                <strong id="waveNumber">— / 5</strong>
+            </div>
+        </section>
+
+        <!-- Starting screen -->
+        <section id="startScreen" class="message-panel">
+            <p class="section-label">YOUR SESSION STARTS HERE</p>
+            <h2>Ready to paddle out?</h2>
+            <p>
+                Read each wave, choose your move, and see whether
+                you've got what it takes to catch the perfect set.
+            </p>
+
+            <button id="startButton" class="primary-button" type="button">
+                START SESSION →
+            </button>
+        </section>
+
+        <!-- Active gameplay area, hidden until the game starts -->
+        <section id="gameScreen" class="message-panel" hidden>
+            <div class="wave-heading">
+                <p id="waveTag" class="section-label">WAVE 01</p>
+                <span id="waveCondition" class="condition-tag">CLEAN</span>
+            </div>
+
+            <h2 id="waveTitle">The first set</h2>
+            <p id="waveDescription" class="wave-description">
+                A wave is approaching...
+            </p>
+
+            <div class="wave-details">
+                <div>
+                    <span class="detail-label">WAVE HEIGHT</span>
+                    <strong id="waveHeight">—</strong>
+                </div>
+
+                <div>
+                    <span class="detail-label">DIFFICULTY</span>
+                    <strong id="waveDifficulty">—</strong>
+                </div>
+
+                <div>
+                    <span class="detail-label">POTENTIAL POINTS</span>
+                    <strong id="wavePoints">—</strong>
+                </div>
+            </div>
+
+            <p class="choice-prompt">WHAT'S YOUR MOVE?</p>
+
+            <div class="choice-buttons">
+                <button id="paddleButton" type="button">
+                    Paddle for it
+                </button>
+
+                <button id="waitButton" type="button">
+                    Wait it out
+                </button>
+
+                <button id="bailButton" type="button">
+                    ↩ Bail out
+                </button>
+            </div>
+
+            <!-- Displays feedback after the player's decision -->
+            <p id="feedback" class="feedback" aria-live="polite">
+                Choose your move.
+            </p>
+
+            <button id="continueButton" class="primary-button" type="button" hidden>
+                NEXT WAVE →
+            </button>
+        </section>
+
+        <!-- Final results screen -->
+        <section id="resultsScreen" class="message-panel" hidden>
+            <p class="section-label">SESSION COMPLETE</p>
+            <h2 id="resultTitle">Session over!</h2>
+            <p id="resultMessage"></p>
+
+            <div class="results-grid">
+                <div>
+                    <span class="detail-label">FINAL SCORE</span>
+                    <strong id="finalScore">0</strong>
+                </div>
+
+                <div>
+                    <span class="detail-label">WAVES CAUGHT</span>
+                    <strong id="wavesCaught">0 / 5</strong>
+                </div>
+
+                <div>
+                    <span class="detail-label">LIVES LEFT</span>
+                    <strong id="livesLeft">0</strong>
+                </div>
+            </div>
+
+            <h3 class="recap-heading">YOUR WAVE RECAP</h3>
+            <ul id="sessionRecap" class="recap-list"></ul>
+
+            <button id="restartButton" class="primary-button" type="button">
+                SURF AGAIN ↻
+            </button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <span>KNOW THE OCEAN.</span>
+            <span>RESPECT THE SET.</span>
+            <span>STAY FOR ONE MORE.</span>
+        </footer>
+
+    </main>
+
+    <!-- Loads the JavaScript after the page elements -->
+    <script src="JS/main.js"></script>
+
+</body>
+
+</html>
