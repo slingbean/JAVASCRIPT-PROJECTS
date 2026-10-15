@@ -1,0 +1,83 @@
+/* General Styles */
+body { background-color: #f6efe2; }
+h1 { font-family: Georgia, 'Times New Roman', serif; color: #a4442f; }
+h3 { font-family: Georgia, 'Times New Roman', serif; color: #496c4e; }
+div { font-family: Arial, Helvetica, sans-serif; color: #303b32; }
+
+/* Pizza Menu Background */
+
+#menuBG {
+    width: 600px;
+    max-width: 95%;
+    min-height: 470px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* Pizza Form */
+
+#frmMenu {
+    width: 100%;
+    min-height: 250px;
+}
+
+/* Menu Columns */
+
+.menu {
+    width: 33.33%;
+    min-height: 200px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: left;
+}
+
+.left {
+    float: left;
+}
+
+.middle {
+    float: left;
+}
+
+.right {
+    float: left;
+}
+
+/* Order Button */
+
+#btnOrder {
+    margin: 10px 0 20px;
+    width: 120px;
+    height: 40px;
+    background-color: #a4442f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Shopping Cart */
+
+#cart {
+    clear: both;
+    width: 100%;
+    min-height: 200px;
+    margin: 20px auto;
+    padding-top: 20px;
+    border-top: 1px solid #a4442f;
+}
+
+#showText {
+    width: 50%;
+    min-height: 190px;
+    margin: 0 auto;
+    float: left;
+    text-align: left;
+}
+
+#totalPrice {
+    width: 50%;
+    min-height: 190px;
+    margin: 0 auto;
+    float: right;
+    text-align: right;
+}
